@@ -1,15 +1,15 @@
 const express = require('express');
-const postRoutes = express.Router();
+const userRoutes = express.Router();
 
 // Require Post model in our routes module
-let Post = require('./Blog.model');
+let User = require('./user.model');
 
 // Defined store route
-postRoutes.route('/add').post(function (req, res) {
-  let post = new Post(req.body);
-  post.save()
+userRoutes.route('/add').post(function (req, res) {
+  let user = new User(req.body);
+  user.save()
     .then(() => {
-      res.status(200).json({'business': 'business in added successfully'});
+      res.status(200).json({'user': 'user in added successfully'});
     })
     .catch(() => {
       res.status(400).send("unable to save to database");
@@ -17,13 +17,13 @@ postRoutes.route('/add').post(function (req, res) {
 });
 
 // Defined get data(index or listing) route
-postRoutes.route('/').get(function (req, res) {
-    Post.find(function(err, posts){
+userRoutes.route('/').get(function (req, res) {
+    User.find(function(err, users){
     if(err){
       res.json(err);
     }
     else {
-      res.json(posts);
+      res.json(users);
     }
   });
 });
@@ -65,4 +65,4 @@ postRoutes.route('/').get(function (req, res) {
 //     });
 // });
 
-module.exports = postRoutes;
+module.exports = userRoutes;

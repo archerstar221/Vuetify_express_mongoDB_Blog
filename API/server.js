@@ -6,6 +6,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./DB.js');
 const postRoute = require('./Blog.route');
+const userRoute = require('./users/user.route');
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.DB, { useNewUrlParser: true }).then(
@@ -18,7 +19,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json({limit:"10000kb"}));
 
 app.use('/blogs', postRoute);
-
+app.use('/users', userRoute);
 app.listen(PORT, function(){
   console.log('Server is running on Port:',PORT);
 });

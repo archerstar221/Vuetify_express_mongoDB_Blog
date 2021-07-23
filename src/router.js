@@ -7,7 +7,7 @@ Vue.config.productionTip = false;
 import HomeComponent from './components/Home.vue';
 import CreateComponent from './components/BlogCreate.vue';
 import BlogComponent from './components/BlogView.vue';
-import LoginComponent from './components/user/login.vue';
+import SignupComponent from './components/user/Signup.vue';
 const routes = [
   {
       name: 'home',
@@ -25,9 +25,9 @@ const routes = [
     component: BlogComponent
     },
   {
-    name:'Login',
-    path:'/login',
-    component:LoginComponent   
+    name:'Signup',
+    path:'/signup',
+    component:SignupComponent   
   }
 ];
 
