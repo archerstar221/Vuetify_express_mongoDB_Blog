@@ -8,6 +8,7 @@ import HomeComponent from './components/Home.vue';
 import CreateComponent from './components/BlogCreate.vue';
 import BlogComponent from './components/BlogView.vue';
 import SignupComponent from './components/user/Signup.vue';
+import LoginComponent from './components/user/Login.vue';
 const routes = [
   {
       name: 'home',
@@ -28,6 +29,11 @@ const routes = [
     name:'Signup',
     path:'/signup',
     component:SignupComponent   
+  },
+  {
+    name:'Login',
+    path:'/login',
+    component:LoginComponent   
   }
 ];
 

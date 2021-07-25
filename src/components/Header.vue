@@ -61,7 +61,7 @@
                         title:"Blog Create",icon: 'create',to:'/create'
                     },
                     {
-                        title:"Login",icon: 'mdi-account', to:'/signup'
+                        title:"Login",icon: 'mdi-account', to:'/login'
                     },
                 ]
             }

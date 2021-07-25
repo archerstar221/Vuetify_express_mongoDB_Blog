@@ -1,5 +1,5 @@
 <template>
-    <div class="signUp d-flex align-center">
+    <div class="login d-flex align-center">
         <v-container class="d-flex justify-center">
             <v-sheet height="400" width="300" color="rgba(0,0,0,0)">
                 <v-text-field
@@ -9,19 +9,8 @@
                 outlined
                 dark
                 autocomplete="off"
-                placeholder="Username"
-                v-model="user.username"
-                >
-                </v-text-field>
-                <v-text-field
-                filled
-                dense
-                rounded
-                outlined
-                dark
-                autocomplete="off"
                 placeholder="Email"
-                v-model="user.email"
+                v-model="user_valid.email"
                 >
                 </v-text-field>
                 <v-text-field
@@ -33,7 +22,7 @@
                 dark
                 autocomplete="off"
                 placeholder="Password"
-                v-model="user.password"
+                v-model="user_valid.password"
                 >
                 </v-text-field>
                 <v-btn
@@ -41,26 +30,29 @@
                 dark
                 color="#b7801fdb"
                 width="300"
-                @click.prevent="createUser"
+                @click.prevent="login"
                 >
-                SIGN UP
+                Login
                 </v-btn>
+                
+               <v-btn :to="'/signup'">Sign up</v-btn>
             </v-sheet>
         </v-container>
     </div>
 </template>
 <script>
     export default{
-        name:"Signup",
+        name:"Login",
         data:() => ({
             // back:'./assets/pricing.jpg',
-            user:{},
+            user_valid:{},
         }),
         methods: {
-            createUser(){
-                let uri = '//localhost:4000/users/sign/add';
-                this.axios.post(uri, this.user).then(() => {
-                this.$router.push({path:'blogs'});
+            login(){
+                let uri = '//localhost:4000/users/login';
+                this.axios.post(uri, this.user_valid).then((res) => {
+                    localStorage.setItem("token",res.data.token);
+                    this.$router.push({path:'blogs'});
                 });
             }
         }
@@ -68,7 +60,7 @@
 </script>
 
 <style>
-    .signUp{
+    .login{
         background: url("/assets/pricing.jpg");
         background-size: cover;
         text-align: center;

@@ -20,5 +20,12 @@ let User = new Schema({
 },{
     collection: 'users'
 });
-
-module.exports = mongoose.model('User', User);
+const initUser=(username,email,hashedpassword) => {
+  return{
+    username:username,
+    email:email,
+    password:hashedpassword
+  };
+};
+module.exports.User = mongoose.model('User', User);
+module.exports.initUser = initUser; 
