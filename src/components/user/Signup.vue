@@ -69,7 +69,7 @@
 
 <style>
     .signUp{
-        background: url("/assets/pricing.jpg");
+        background: url("/assets/register.jpg");
         background-size: cover;
         text-align: center;
         height: 100vh;

@@ -34,8 +34,16 @@
                 >
                 Login
                 </v-btn>
-                
-               <v-btn :to="'/signup'">Sign up</v-btn>
+                <div class="d-flex justify-end">
+                    <v-btn :to="'/signup'" 
+                    class="my-5"
+                    dense
+                    rounded
+                    dark
+                    height="30"
+                    color="#46020287"
+                    >Sign up</v-btn>
+                </div>
             </v-sheet>
         </v-container>
     </div>
@@ -61,7 +69,7 @@
 
 <style>
     .login{
-        background: url("/assets/pricing.jpg");
+        background: url("/assets/register.jpg");
         background-size: cover;
         text-align: center;
         height: 100vh;

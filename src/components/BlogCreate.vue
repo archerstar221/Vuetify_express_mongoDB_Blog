@@ -2,7 +2,7 @@
     <div class="createImage d-flex align-center ">
         <v-container>
                 <v-form >
-                  <v-sheet color="#f8f6f521" outlined>
+                  <v-sheet color="rgb(248 246 245 / 5%)" outlined>
                     <h2 class="text-center text-h2 yellow--text my-5">Blog Create</h2>
                     <v-row class="pa-5">
                         <v-col 
@@ -106,7 +106,7 @@ export default{
 </script>
 <style>
 .createImage{
-    background: url("https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg") no-repeat;
+    background: url("/assets/pricing.jpg") no-repeat;
     width: 100%;
     margin: auto;
     height: 660px;
