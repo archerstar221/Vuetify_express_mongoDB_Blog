@@ -58,10 +58,15 @@
         }),
         methods: {
             createUser(){
-                let uri = '//localhost:4000/users/sign/add';
-                this.axios.post(uri, this.user).then(() => {
-                this.$router.push({path:'blogs'});
-                });
+                // let uri = '//localhost:4000/users/sign/add';
+                // this.axios.post(uri, this.user).then(() => {
+                // this.$router.push({path:'login'});
+                // });
+                this.$store.dispatch('signup', this.user)
+                .then(() => {
+                        this.$router.push({path:'blogs'})
+                })
+                .catch(err => console.log(err))
             }
         }
     }

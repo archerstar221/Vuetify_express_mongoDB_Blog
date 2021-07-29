@@ -57,13 +57,23 @@
         }),
         methods: {
             login(){
-                let uri = '//localhost:4000/users/login';
-                this.axios.post(uri, this.user_valid).then((res) => {
-                    localStorage.setItem("token",res.data.token);
-                    this.$router.push({path:'blogs'});
-                });
+                // let uri = '//localhost:4000/users/login';
+                // this.axios.post(uri, this.user_valid).then((res) => {
+                //     localStorage.setItem("token",res.data.token);
+                //     this.$router.push({path:'blogs'});
+                // });
+                this.$store.dispatch('login', this.user_valid)
+                .then(() => {
+                    if (this.$store.state.usermodule.status == "success") {
+                        this.$router.push({path:'blogs'})
+                    }
+                })
+                .catch(err => console.log(err))
             }
-        }
+        },
+//         beforeDestroy:function(){
+//     localStorage.removeItem("token")
+//   }
     }
 </script>
 

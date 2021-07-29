@@ -84,7 +84,8 @@ userRoutes.route('/login').post(function(req, res){
                 res.json({
                   msg: "auth ok",
                   token: jwttoken,
-                  email: user_valid.email
+                  email: user_valid.email,
+                  success:true
                 });
               }
             }

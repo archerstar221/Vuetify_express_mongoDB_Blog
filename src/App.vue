@@ -26,10 +26,6 @@ export default {
     Header,
     // Home,
     // Create,
-  },
-
-  data: () => ({
-    //
-  }),
+  }  
 };
 </script>
